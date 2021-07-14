@@ -73,7 +73,7 @@ class ModelTrainingModule(nn.Module):
         self.best_acc = None
         self.best_model_wts = None
 
-    def train(self, num_epochs=200, save_path='model.pth'):
+    def train(self, num_epochs=200, save_path='./out/model.pth'):
 
         criterion = nn.CrossEntropyLoss()
         optimizer = torch.optim.Adam(self.model.parameters(), lr=0.001)
@@ -112,7 +112,7 @@ class ModelTrainingModule(nn.Module):
                     # forward
                     # track history if only in train
                     with torch.set_grad_enabled(phase == 'train'):
-                        outputs = F.softmax(self.model(inputs), dim=1)
+                        outputs = self.model(inputs)
                         _, preds = torch.max(outputs, 1)
                         loss = criterion(outputs, labels)
 
