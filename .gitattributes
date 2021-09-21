@@ -1,0 +1,2 @@
+data/grasp_type_recognition_dataset.tar.gz filter=lfs diff=lfs merge=lfs -text
+data/grasp-type-recognition-resnet101.pth filter=lfs diff=lfs merge=lfs -text
