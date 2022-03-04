@@ -25,13 +25,13 @@ nn = GraspTypeRecognitionModule()
 
 img = np.asarray(Image.open('sample/image.jpg'))
 result = nn.inference(img)
-print('Inference result: ' + grasp_types[np.argmax(result)])
+print('Inference result (without affordance): ' + grasp_types[np.argmax(result)])
 
 result = nn.inference_with_affordance(img, 'Apple', affordance_type='varied')
-print('Inference result (with varied affordance): ' + grasp_types[np.argmax(result)])
+print('Inference result (inference with varied affordance): ' + grasp_types[np.argmax(result)])
 
 result = nn.inference_with_affordance(img, 'Apple', affordance_type='uniformal')
-print('Inference result (with uniformal affordance): ' + grasp_types[np.argmax(result)])
+print('Inference result (inference with uniformal affordance): ' + grasp_types[np.argmax(result)])
         
 result = nn.inference_from_affordance('Apple', affordance_type='varied')
 print('Inference result (inference only with varied affordance): ' + grasp_types[np.argmax(result)])
