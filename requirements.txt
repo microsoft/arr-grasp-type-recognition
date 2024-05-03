@@ -1,5 +1,5 @@
 matplotlib==3.4.2
-tqdm==4.61.1
+tqdm==4.66.3
 pandas
 gdown
 torch==1.8.1+cu111 
